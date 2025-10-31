@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome To HemantGamerzYT</title>
+  <style>
+    /* Loader overlay */
+    #loader {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, purple, blue, white, black);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+      transition: opacity 1s ease;
+    }
+
+    /* Spinner */
+    .spinner {
+      border: 10px solid rgba(255,255,255,0.3);
+      border-top: 10px solid #3498db; /* Blue */
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      animation: spin 2s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+
+    /* Loader Text */
+    #loader-text {
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      font-size: 2em;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 5px #000;
+    }
+
+    /* Website Styles */
+    body {
+      background: url('https://cdn.discordapp.com/attachments/1404160600677810219/1431283025425203352/images_1.jpg?ex=69061431&is=6904c2b1&hm=48392d17c4ef7b03947fbfc0f18f84afaaea4d38a60e2d6750fa4c07563a4e07&') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      margin-top: 1%;
+      font-size: 3em;
+      text-shadow: 2px 2px 10px #000;
+    }
+
+    p {
+      font-size: 1.3em;
+      text-shadow: 1px 1px 5px #000;
+    }
+
+    .logo {
+      margin-top: 30px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 2px 2px 15px #000;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      background: rgba(0, 0, 0, 0.6);
+      border: 2px solid #7289da;
+      border-radius: 8px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      background: #7289da;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 0.9em;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <div id="loader-text">Please wait... Loading</div>
+  </div>
+
+  <!-- Website Content -->
+  <img class="logo" src="https://cdn.discordapp.com/attachments/1404160600677810219/1433858548361855111/Picsart_25-08-21_20-48-15-159-1.jpg?ex=69063855&is=6904e6d5&hm=dd30e7cb11ca8ca8750f871029ab8381ac046282d5f834d8d1d3b2c840daadf3&" alt="HemantGamerzYT Logo">
+  <h1>Welcome To HemantGamerzYT</h1>
+  <p>Subscribe Now for Awesome Gaming Content!</p>
+
+  <div class="buttons">
+    <a href="https://discord.gg/8XrrGqNT34" target="_blank">Official Discord</a>
+    <a href="https://discord.gg/cJSE9ufVkN" target="_blank">SMP Discord</a>
+    <a href="https://discord.gg/uKhPdSypgq" target="_blank">Hosting Discord</a>
+    <a href="https://www.youtube.com/@HemantGamerzYT" target="_blank">YouTube Channel</a>
+  </div>
+
+  <footer>© 2025 HemantGamerzYT | All Rights Reserved</footer>
+
+  <!-- Script to hide loader after 4 seconds -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(() => {
+        const loader = document.getElementById('loader');
+        loader.style.opacity = '0';
+        setTimeout(() => { loader.style.display = 'none'; }, 1000); // fade-out duration
+      }, 4000); // 4000ms = 4 seconds
+    });
+  </script>
+</body>
+</html>
