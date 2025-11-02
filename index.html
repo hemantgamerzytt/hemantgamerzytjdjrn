@@ -1,200 +1,126 @@
-/*
-HG NETWORK - Single-file React component (App.jsx)
-Red & Black theme, sections: Welcome, Nests (Rank, Crate Key), CTA.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HG NETWORK</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-How to use:
-1) Create a new React app (recommended) with Vite or Create React App.
-   - Vite: npm create vite@latest my-site -- --template react
-   - CRA: npx create-react-app my-site
-2) Install Tailwind CSS (follow Tailwind docs). Quick steps for Vite/CRA:
-   - npm install -D tailwindcss postcss autoprefixer
-   - npx tailwindcss init -p
-   - Configure tailwind.config.js content to include ./src/**/*.{js,jsx,ts,tsx}
-   - Add to ./src/index.css: @tailwind base; @tailwind components; @tailwind utilities;
-3) Replace ./src/App.jsx with this file's content and ./src/index.css with your Tailwind imports.
-4) Run: npm install && npm run dev (Vite) or npm start (CRA)
+        body {
+            background-color: #121212;
+            color: #fff;
+        }
 
-Deploy to GitHub Pages (simple):
-- Create a GitHub repo and push your project.
-- Use GitHub Pages from the repo settings (select branch: gh-pages or main and folder: / (root) for static build).
-- Or use GitHub Action or `gh-pages` package for React apps.
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-Alternatively deploy to Vercel or Netlify for easier hosting.
+        /* Header */
+        header {
+            background-color: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #ff0000;
+        }
 
-Customize: change texts, colors, and images below.
-*/
+        header h1 {
+            color: #ff0000;
+            font-size: 2.5em;
+        }
 
-import React from "react";
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
 
-export default function App() {
-  return (
-    <div className="min-h-screen bg-black text-white antialiased">
-      {/* Decorative gradient & frame */}
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        <header className="flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-md bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center shadow-lg">
-              <span className="font-black text-xl tracking-tight">HG</span>
-            </div>
-            <div>
-              <h1 className="text-2xl font-extrabold">HG NETWORK</h1>
-              <p className="text-sm text-red-400">Welcome to the official HG Network</p>
-            </div>
-          </div>
+        nav a {
+            color: #fff;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: 2px solid #ff0000;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
 
-          <nav className="flex gap-4 items-center">
-            <a href="#nests" className="px-4 py-2 rounded-md text-sm border border-red-700 hover:bg-red-800 transition">Nests</a>
-            <a href="#ranks" className="px-4 py-2 rounded-md text-sm border border-red-700 hover:bg-red-800 transition">Ranks</a>
-            <a href="#crate-keys" className="px-4 py-2 rounded-md text-sm border border-red-700 hover:bg-red-800 transition">Crate Keys</a>
-            <button className="ml-2 px-4 py-2 rounded-md bg-red-600 hover:bg-red-700 text-black font-semibold">Join</button>
-          </nav>
-        </header>
+        nav a:hover {
+            background-color: #ff0000;
+            color: #000;
+        }
 
-        {/* Hero */}
-        <section className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div>
-            <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">Welcome To <span className="text-red-500">HG NETWORK</span></h2>
-            <p className="mt-4 text-gray-300 max-w-xl">A community-driven gaming network focused on competitive play, fair ranks, and rewarding crate systems. Fast, fair, and fun — built for players, by players.</p>
+        /* Sections */
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
 
-            <div className="mt-6 flex gap-3">
-              <a href="#nests" className="px-5 py-3 rounded-md bg-red-600 text-black font-bold">Explore Nests</a>
-              <a href="#contact" className="px-5 py-3 rounded-md border border-red-700 text-sm">Contact Us</a>
-            </div>
+        section h2 {
+            color: #ff0000;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
 
-            <div className="mt-6 text-sm text-gray-400">Server IP (example): <span className="text-red-400 font-semibold">play.hg-network.example</span></div>
-          </div>
+        section p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-          <div className="rounded-xl p-6 bg-gradient-to-br from-red-900/30 to-black/60 border border-red-800 shadow-inner">
-            <h3 className="text-xl font-bold">Latest Announcements</h3>
-            <ul className="mt-4 space-y-3 text-gray-300">
-              <li className="p-3 rounded-md bg-black/40 border border-red-800">New Rank system released — more balance and rewards.</li>
-              <li className="p-3 rounded-md bg-black/40 border border-red-800">Crate Key sale this weekend — limited skins & perks.</li>
-              <li className="p-3 rounded-md bg-black/40 border border-red-800">Server upgrades completed for lower latency.</li>
-            </ul>
-          </div>
-        </section>
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid #ff0000;
+            margin-top: 50px;
+        }
 
-        {/* Nests */}
-        <section id="nests" className="mt-16">
-          <h3 className="text-3xl font-extrabold">Nests</h3>
-          <p className="mt-2 text-gray-400 max-w-2xl">Nests are collections of services and plans tailored for players and server hosts. Choose a nest below to view details.</p>
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Welcome To HG NETWORK</h1>
+    </header>
 
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card title="Rank Nest" subtitle="Progressive ranks & perks" price="₹49" features={["Fast rank upgrades","Leaderboards","Daily rewards"]} ctaLink="#ranks" />
-            <Card title="Crate Key Nest" subtitle="Crates, keys & exclusive loot" price="₹99" features={["Rare skins","Timed crates","Key bundles"]} ctaLink="#crate-keys" />
-            <Card title="VIP Nest" subtitle="VIP perks for supporters" price="₹199" features={["Priority queue","Exclusive chat","VIP tag"]} ctaLink="#vip" />
-          </div>
-        </section>
+    <!-- Navigation -->
+    <nav>
+        <a href="#nest">Nest</a>
+        <a href="#rank">Rank</a>
+        <a href="#crate">Crate Key</a>
+    </nav>
 
-        {/* Ranks */}
-        <section id="ranks" className="mt-16">
-          <div className="flex items-center justify-between">
-            <h3 className="text-3xl font-extrabold">Ranks</h3>
-            <div className="text-sm text-gray-400">Choose your path — earn or buy ranks.</div>
-          </div>
+    <!-- Nest Section -->
+    <section id="nest">
+        <h2>Nest</h2>
+        <p>Explore our servers, hosting options, and control panels. Build and manage your projects easily with HG NETWORK.</p>
+    </section>
 
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <FeatureCard name="Bronze" price="₹49" perks={["Basic kit","Nameplate"]} />
-            <FeatureCard name="Silver" price="₹99" perks={["Extra kit","Server tag"]} />
-            <FeatureCard name="Gold" price="₹199" perks={["Exclusive cosmetics","Priority queue"]} />
-          </div>
-        </section>
+    <!-- Rank Section -->
+    <section id="rank">
+        <h2>Rank</h2>
+        <p>Check out our exclusive ranks. Unlock new features, perks, and privileges by leveling up your rank in HG NETWORK.</p>
+    </section>
 
-        {/* Crate Keys */}
-        <section id="crate-keys" className="mt-16">
-          <h3 className="text-3xl font-extrabold">Crate Keys</h3>
-          <p className="mt-2 text-gray-400">Open crates to win exclusive items. Keys can be bought, won, or earned in events.</p>
+    <!-- Crate Key Section -->
+    <section id="crate">
+        <h2>Crate Key</h2>
+        <p>Purchase Crate Keys to unlock special rewards and items. Collect, trade, and enjoy unique surprises in HG NETWORK.</p>
+    </section>
 
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <KeyCard tier="Common" price="₹9" rewards={["Coins","Basic items"]} />
-            <KeyCard tier="Rare" price="₹49" rewards={["Skins","Special items"]} />
-            <KeyCard tier="Legendary" price="₹249" rewards={["Exclusive skins","Huge coin drops"]} />
-          </div>
-        </section>
-
-        {/* Footer / Contact */}
-        <footer id="contact" className="mt-20 border-t border-red-900/40 pt-8 pb-4 text-sm text-gray-400">
-          <div className="flex flex-col md:flex-row md:justify-between gap-6">
-            <div>
-              <h4 className="font-bold text-white">HG NETWORK</h4>
-              <p className="mt-1">Built with ❤️ for the community. Follow us on social platforms for updates.</p>
-            </div>
-            <div className="flex gap-4 items-center">
-              <div>
-                <div className="text-xs text-gray-400">Support</div>
-                <div className="font-medium">support@hg-network.example</div>
-              </div>
-
-              <div>
-                <div className="text-xs text-gray-400">Join our Discord</div>
-                <a href="#" className="underline">discord.gg/example</a>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-6 text-center text-gray-600">© {new Date().getFullYear()} HG NETWORK — All rights reserved.</div>
-        </footer>
-      </div>
-    </div>
-  );
-}
-
-function Card({ title, subtitle, price, features = [], ctaLink = "#" }) {
-  return (
-    <div className="rounded-xl p-5 bg-black/40 border border-red-800 shadow-lg">
-      <div className="flex items-center justify-between">
-        <div>
-          <h4 className="font-bold text-lg">{title}</h4>
-          <div className="text-sm text-gray-400">{subtitle}</div>
-        </div>
-        <div className="text-red-400 font-extrabold">{price}</div>
-      </div>
-
-      <ul className="mt-4 space-y-2 text-gray-300 text-sm">
-        {features.map((f, i) => (
-          <li key={i} className="flex items-center gap-2">✅ <span>{f}</span></li>
-        ))}
-      </ul>
-
-      <a href={ctaLink} className="inline-block mt-5 w-full text-center px-4 py-2 rounded-md bg-red-600 text-black font-semibold">View</a>
-    </div>
-  );
-}
-
-function FeatureCard({ name, price, perks = [] }) {
-  return (
-    <div className="rounded-lg p-5 bg-black/30 border border-red-800">
-      <div className="flex items-center justify-between">
-        <div>
-          <h5 className="font-bold">{name}</h5>
-          <div className="text-sm text-gray-400">{perks.join(" • ")}</div>
-        </div>
-        <div className="text-red-400 font-bold">{price}</div>
-      </div>
-
-      <div className="mt-4">
-        <button className="px-4 py-2 rounded-md bg-red-600 text-black font-semibold">Buy</button>
-      </div>
-    </div>
-  );
-}
-
-function KeyCard({ tier, price, rewards = [] }) {
-  return (
-    <div className="rounded-lg p-5 bg-black/30 border border-red-800 text-center">
-      <div className="text-sm font-bold">{tier}</div>
-      <div className="mt-2 text-red-400 text-lg font-extrabold">{price}</div>
-
-      <ul className="mt-4 text-sm text-gray-300 space-y-2">
-        {rewards.map((r, i) => (
-          <li key={i}>• {r}</li>
-        ))}
-      </ul>
-
-      <div className="mt-4">
-        <button className="px-4 py-2 rounded-md bg-red-600 text-black font-semibold">Buy Key</button>
-      </div>
-    </div>
-  );
-}
-                    
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 HG NETWORK. All rights reserved.
+    </footer>
+</body>
+</html>
