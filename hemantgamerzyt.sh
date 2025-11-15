@@ -18,7 +18,7 @@ fi
 if [ ! -e $ROOTFS_DIR/.installed ]; then
   echo "#######################################################################################"
   echo "#"
-  echo "#                                HemantGamerzYT INSTALLER"
+  echo "#                                   HemantGamerzYT INSTALLER"
   echo "#"
   echo "#                           Copyright (C) 2024, HemantGamerzYT"
   echo "#"
